@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx-pokus-25
+    container_name: nginx-test25
+    restart: always
+#    expose:
+#      - "80"
+    ports:
+      - "127.0.0.1:8081:80"
+    volumes:
+      - ./conf:/etc/nginx
+      - ./html:/html
+    environment:
+      - TZ=Europe/Berlin
